@@ -27,7 +27,7 @@ In this repository, you will find the code example of a dockerized Nest and Reac
 ## Configure
 
 You can get this porject up and running on your local dev environment in 1 minute.
-You just need to create and fill the environment variables file `.env`.
+You just need to create and fill the environment variables file `.env` from the `.env.example` file.
 
 ## Run
 
