@@ -5,7 +5,7 @@ services:
     container_name: frontend
     build:
       context: ./packages/frontend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.local
     restart: always
     env_file: .env
     ports:
@@ -20,7 +20,7 @@ services:
     container_name: backend
     build:
       context: ./packages/backend
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.local
     restart: always
     env_file: .env
     volumes:

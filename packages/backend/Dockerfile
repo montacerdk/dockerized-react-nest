@@ -1,18 +1,14 @@
 FROM node:12-alpine
 
-RUN mkdir -p /svr/app
+ARG NODE_ENV=staging
 
-WORKDIR /svr/app
-
-RUN npm i -g @nestjs/cli --silent
-
-COPY package.json .
-COPY package-lock.json .
-
-RUN npm install --silent
+WORKDIR /app
 
 COPY . .
 
-EXPOSE $BACKEND_PORT
+RUN npm install --silent
+RUN npm run build
 
-CMD ["npm", "run", "start:debug"]
+EXPOSE 3000
+
+CMD ["node", "dist/main"]
